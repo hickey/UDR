@@ -1,0 +1,43 @@
+The files located in the contrib directory are to assist building packages
+for various Linux OSes. The following are a few notes to assist in buiding
+binary packages for RedHat/CentOS and Debian/Ubuntu. 
+
+RedHat/CentOS
+=============
+
+In order to build RPM packages, one must tar up the UDR distribution (either 
+from a downloaded tar file or the GitHub repository) with the filename
+udr-<VERSION>.tar.gz. This file need to be deposited in the SOURCES directory 
+where your rpmbuild command will find it. Usually either /usr/src/redhat/SOURCES
+or ~/rpmbuild/SOURCES. 
+
+Once the source distribution file has been put in the proper location, the 
+following command can be executed to build a binary RPM. 
+
+	rpmbuild -bb udr.spec
+
+The resulting RPM can be found in one of the following locations:
+
+	~/rpmbuild/RPMS/<arch>/udr-<VERSION>-<RELEASE>.<arch>.rpm
+	/usr/src/redhat/RPMS/<arch>/udr-<VERSION>-<RELEASE>.<arch>.rpm
+
+
+Debian/Ubuntu
+=============
+
+Debian packages are built using the same source distribution file as used
+for RedHat/CentOS. The difference being that the file needs to be named
+udr_<VERSION>.orig.tar.gz and place in the top level directory (i.e. the 
+parent directory where you found this README file). 
+
+Debian packages are build with the following command from the directory
+that contains the debian directory:
+
+	debuild -b -uc -us
+
+The resulting package will be in the top level directory and be named
+udr_<VERSION>-<RELEASE>.<arch>.deb. Also not that this package will not 
+be signed with a GPG key and thus should not be distributed through a 
+publicly available repository. 
+ 
+
