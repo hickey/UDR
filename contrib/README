@@ -27,17 +27,17 @@ Debian/Ubuntu
 
 Debian packages are built using the same source distribution file as used
 for RedHat/CentOS. The difference being that the file needs to be named
-udr_<VERSION>.orig.tar.gz and place in the top level directory (i.e. the 
-parent directory where you found this README file). 
+udr_<VERSION>.orig.tar.gz and placed at the same level as the UDR source
+directory. The contrib/debian directory then needs to be copied to the 
+top level of the UDR source directory. 
 
-Debian packages are build with the following command from the directory
-that contains the debian directory:
+Debian packages are build with the following command from the UDR source
+directory: 
 
 	debuild -b -uc -us
 
-The resulting package will be in the top level directory and be named
-udr_<VERSION>-<RELEASE>.<arch>.deb. Also not that this package will not 
-be signed with a GPG key and thus should not be distributed through a 
-publicly available repository. 
+The resulting package will be in the directory alongside the UDR source
+directory and be named udr_<VERSION>-<RELEASE>.<arch>.deb. Also not that 
+this package will not be signed with a GPG key and thus should not be
+distributed through a publicly available repository. 
  
-
