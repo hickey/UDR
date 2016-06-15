@@ -1,0 +1,15 @@
+Source: udr
+Section: Network
+Priority: optional
+Maintainer: Gerard Hickey <hickey@kinetic-compute.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+Homepage: https://github.com/LabAdvComp/UDR
+Vcs-Git: git://git.debian.org/collab-maint/udr.git
+Vcs-Browser: http://git.debian.org/?p=collab-maint/udr.git;a=summary
+
+Package: udr
+Depends: ${shlibs:Depends}, ${misc:Depends}, libssl-dev
+Architecture: any
+Description: UDT wrapper for rsync
+ A UDT wrapper for rsync that improves throughput of large data transfers over long distances.

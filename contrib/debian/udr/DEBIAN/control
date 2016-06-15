@@ -1,0 +1,11 @@
+Package: udr
+Version: 0.9.4-1
+Architecture: amd64
+Maintainer: Gerard Hickey <hickey@kinetic-compute.com>
+Installed-Size: 233
+Depends: libc6 (>= 2.14), libgcc1 (>= 1:4.1.1), libssl1.0.0 (>= 1.0.0), libstdc++6 (>= 4.6), libssl-dev
+Section: Network
+Priority: optional
+Homepage: https://github.com/LabAdvComp/UDR
+Description: UDT wrapper for rsync
+ A UDT wrapper for rsync that improves throughput of large data transfers over long distances.
